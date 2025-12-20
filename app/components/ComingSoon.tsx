@@ -10,7 +10,7 @@ export default function ComingSoon() {
 
         <p className="text-gray-300 text-lg mb-8">
           This website is currently under construction.  
-          We’re working hard to bring you something awesome!
+          We&apos;re working hard to bring you something awesome!
         </p>
 
         <div className="text-sm text-gray-400">
