@@ -10,6 +10,118 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Custom animations */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes float-delayed {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+
+  @keyframes float-slow {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  @keyframes gradient {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes bounce-slow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes orbit {
+    from {
+      transform: rotate(0deg) translateX(120px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(120px) rotate(-360deg);
+    }
+  }
+
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float-delayed 8s ease-in-out infinite;
+  --animate-float-slow: float-slow 10s ease-in-out infinite;
+  --animate-gradient: gradient 3s ease infinite;
+  --animate-spin-slow: spin-slow 20s linear infinite;
+  --animate-spin-reverse: spin-reverse 15s linear infinite;
+  --animate-bounce-slow: bounce-slow 3s ease-in-out infinite;
+  --animate-orbit: orbit 20s linear infinite;
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +135,46 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Animation utilities */
+.animate-float {
+  animation: var(--animate-float);
+}
+
+.animate-float-delayed {
+  animation: var(--animate-float-delayed);
+}
+
+.animate-float-slow {
+  animation: var(--animate-float-slow);
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: var(--animate-gradient);
+}
+
+.animate-spin-slow {
+  animation: var(--animate-spin-slow);
+}
+
+.animate-spin-reverse {
+  animation: var(--animate-spin-reverse);
+}
+
+.animate-bounce-slow {
+  animation: var(--animate-bounce-slow);
+}
+
+.animate-orbit {
+  animation: var(--animate-orbit);
+}
+
+.animate-wiggle {
+  animation: var(--animate-wiggle);
+}
+
+.animate-pulse-slow {
+  animation: var(--animate-pulse-slow);
 }
